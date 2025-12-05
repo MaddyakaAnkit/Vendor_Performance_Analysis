@@ -1,6 +1,7 @@
 # Vendor Performance Data Analysis
 
-Vendor Performance Dashboard <img width="767" height="462" alt="Screenshot 2025-12-04 at 5 03 25 PM" src="https://github.com/user-attachments/assets/efb642f0-2f18-4f80-a9fa-23de912515c2" />
+Vendor Performance Dashboard 
+<img width="767" height="462" alt="Screenshot 2025-12-04 at 5 03 25 PM" src="https://github.com/user-attachments/assets/efb642f0-2f18-4f80-a9fa-23de912515c2" />
 
 
 ## Overview
@@ -17,7 +18,7 @@ Optimize profitability through better inventory and vendor management by:
 - Assessing inventory turnover to reduce holding costs
 - Investigating profitability variance between vendor tiers
 
-  ## Project Methodology & Analysis
+## Project Methodology & Analysis
 
 ### 1. Data Pipeline Development
 - Designed and implemented automated ETL pipeline using Python
@@ -186,9 +187,7 @@ Python • Pandas • SQLite • SQLAlchemy • Jupyter • Power BI • Statist
 ## Author
 **Ankit Raj Sharma**  
 MS Data Analytics Engineering, Northeastern University  
-sharma.ankitr@northeastern.edu | [LinkedIn](#) | [Portfolio](#)
-
-
+sharma.ankitr@northeastern.edu
 
 ---
 
