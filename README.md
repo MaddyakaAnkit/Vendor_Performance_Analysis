@@ -17,6 +17,90 @@ Optimize profitability through better inventory and vendor management by:
 - Assessing inventory turnover to reduce holding costs
 - Investigating profitability variance between vendor tiers
 
+  ## Project Methodology & Analysis
+
+### 1. Data Pipeline Development
+- Designed and implemented automated ETL pipeline using Python
+- Created `ingestion_db.py` to batch process 6 CSV files into SQLite database
+- Built `get_vendor_summary.py` for data aggregation and metric calculation
+- Implemented comprehensive logging system for monitoring and debugging
+
+### 2. Database Design & Optimization
+- Structured SQLite database to handle 15.4M+ records efficiently
+- Designed complex SQL queries using CTEs (Common Table Expressions) for multi-table joins
+- Created `vendor_sales_summary` table as single source of truth
+- Optimized query performance through pre-aggregation (225x faster dashboard queries)
+
+### 3. Data Cleaning & Transformation
+- Handled data quality issues:
+  - Converted Volume column from object to float datatype
+  - Managed 178 missing values for unsold products
+  - Stripped whitespace from 126 vendor names
+  - Filtered negative profits and zero-sales records
+- Standardized measurement units (volumes in mL, currency in USD)
+- Validated data integrity across table relationships
+
+### 4. Exploratory Data Analysis
+- Conducted comprehensive EDA on 7 database tables
+- Performed deep-dive analysis on sample vendor (#4466) to validate data patterns
+- Analyzed distributions of 18 variables using histograms
+- Identified outliers and data anomalies (negative profits, extreme freight costs)
+- Examined purchasing patterns across vendors and brands
+
+### 5. Statistical Analysis
+- **Descriptive Statistics**: Calculated mean, median, std dev for all metrics
+- **Correlation Analysis**: Built correlation heatmap showing relationships between 18 variables
+  - Discovered strong correlation (0.999) between purchase and sales quantities
+  - Found weak negative correlation between profit margin and sales price (-0.179)
+- **Hypothesis Testing**: 
+  - Tested difference in profit margins between top and low vendors
+  - Used 95% confidence intervals
+  - Rejected null hypothesis with statistical significance
+  - Top vendors: 31.17% (CI: 30.74-31.61%) vs Low vendors: 41.55% (CI: 40.48-42.62%)
+- **Outlier Detection**: Identified extreme values in pricing, freight costs, and stock turnover
+
+### 6. Business Metrics Engineering
+Created 4 key performance indicators:
+```python
+GrossProfit = TotalSalesDollars - TotalPurchaseDollars
+ProfitMargin = (GrossProfit / TotalSalesDollars) × 100
+StockTurnover = TotalSalesQuantity / TotalPurchaseQuantity
+SalesToPurchaseRatio = TotalSalesDollars / TotalPurchaseDollars
+```
+
+### 7. Business Intelligence & Insights
+- Identified 198 high-margin, low-sales brands for promotional campaigns
+- Quantified vendor concentration risk (65.69% dependency on top 10)
+- Calculated bulk purchasing advantages (72% cost savings for large orders)
+- Discovered $2.71M in unsold inventory requiring optimization
+- Segmented vendors into performance tiers with distinct profitability models
+
+### 8. Data Visualization
+- **Power BI Dashboard**: Built interactive dashboard with 5 visualizations
+  - KPI cards showing key business metrics
+  - Donut chart for vendor purchase contribution
+  - Horizontal bar charts for top vendors and brands
+  - Scatter plot identifying low-performing brands
+  - Color-coded performance indicators
+- **Python Visualizations**: Created distribution plots, correlation heatmaps, confidence interval charts
+
+### 9. Reporting & Documentation
+- Developed comprehensive business analysis report with findings and recommendations
+- Created technical documentation for reproducibility
+- Documented data pipeline architecture
+- Provided actionable insights for stakeholders
+
+## Author
+**Ankit Raj Sharma**  
+MS Data Analytics Engineering, Northeastern University  
+sharma.ankitr@northeastern.edu | [LinkedIn](#) | [Portfolio](#)
+
+**Leadership:** Yi Chapter Head (IIIT Pune) | Community Library Founder
+
+---
+
+**Keywords**: Vendor Analysis, Inventory Management, Profit Optimization, Business Intelligence, Supply Chain Analytics
+
 ## Project Structure
 ```
 ├── data/                          # CSV source files
@@ -97,14 +181,14 @@ df = pd.read_sql_query("""
 5. **Optimize low-turnover vendors** marketing and distribution
 
 ## Technologies
-Python • Pandas • SQLite • SQLAlchemy • Jupyter • Power BI • Statistical Analysis
+Python • Pandas • SQLite • SQLAlchemy • Jupyter • Power BI • Statistical Analysis 
 
 ## Author
 **Ankit Raj Sharma**  
 MS Data Analytics Engineering, Northeastern University  
 sharma.ankitr@northeastern.edu | [LinkedIn](#) | [Portfolio](#)
 
-**Leadership:** Yi Chapter Head (IIIT Pune) | Community Library Founder
+
 
 ---
 
