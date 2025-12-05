@@ -1,6 +1,7 @@
 # Vendor Performance Data Analysis
 
-![Vendor Performance Dashboard](dashboard_preview.png)
+![Vendor Performance Dashboard]<img width="767" height="462" alt="Screenshot 2025-12-04 at 5 03 25 PM" src="https://github.com/user-attachments/assets/efb642f0-2f18-4f80-a9fa-23de912515c2" />
+
 
 ## Overview
 Analysis of vendor performance data to optimize profitability and pricing strategies across a liquor inventory management system. Processed **15.4M+ records** from 2024 to generate actionable business insights.
