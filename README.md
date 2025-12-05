@@ -54,23 +54,6 @@ Optimize profitability through better inventory and vendor management by:
 ### 5. Top Performers
 **Leading Brands:** Jack Daniels ($8.20M), Tito's Vodka ($7.48M), Grey Goose ($7.28M)
 
-## Installation
-
-```bash
-# Setup
-git clone <repo-url>
-cd vendor-performance-analysis
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install pandas sqlalchemy numpy jupyter matplotlib seaborn scipy
-
-# Run pipeline
-mkdir logs data
-python ingestion_db.py      # Load data (~5-10 min)
-python get_vendor_summary.py # Process (~2 min)
-jupyter notebook "Exploratory Data Analysis.ipynb"
-```
-
 ## Usage Examples
 
 **Top Profitable Vendors:**
